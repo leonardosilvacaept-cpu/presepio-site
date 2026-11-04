@@ -5605,7 +5605,7 @@ body.page-loaded
 
 @media (max-width: 980px) {
     .navbar {
-        position: absolute;
+        position: fixed;
 
         height: 92px;
 
@@ -12197,4 +12197,7 @@ body::after {
             )
             !important;
     }
+}
+.navbar.navbar-hidden {
+    transform: none !important;
 }
