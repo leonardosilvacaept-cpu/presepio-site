@@ -1,0 +1,1551 @@
+/* =========================================================
+   SOBRE NÓS
+   ========================================================= */
+
+:root {
+    --about-paper: transparent;
+    --about-paper-light: rgba(10, 29, 46, 0.78);
+
+    --about-ink: #f5f7fa;
+    --about-muted: rgba(207, 222, 231, 0.68);
+
+    --about-orange: #d5b46c;
+    --about-gold: #f2d89b;
+
+    --about-border: rgba(137, 192, 211, 0.16);
+
+    --about-card:
+        linear-gradient(
+            145deg,
+            rgba(16, 48, 68, 0.7),
+            rgba(4, 18, 33, 0.78)
+        );
+
+    --about-card-hover:
+        linear-gradient(
+            145deg,
+            rgba(22, 62, 83, 0.78),
+            rgba(5, 23, 40, 0.86)
+        );
+}
+
+.sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+    border: 0;
+}
+
+.about-page {
+    background: var(--about-paper);
+}
+
+.about-navbar {
+    border-bottom: 0;
+}
+
+
+/* Hero */
+
+.about-hero {
+    position: relative;
+
+    min-height: 92vh;
+    padding:
+        calc(var(--navbar-height) + 100px)
+        7%
+        90px;
+
+    display: flex;
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    background: #090705;
+}
+
+.about-hero-background {
+    position: absolute;
+    inset: 0;
+
+    background:
+        url("../images/casas/sobre-nos-hero.jpg")
+        center / cover no-repeat;
+
+    transform: scale(1.05);
+
+    animation:
+        about-hero-zoom 18s
+        ease-in-out
+        infinite alternate;
+}
+
+@keyframes about-hero-zoom {
+    to {
+        transform:
+            scale(1.11)
+            translate3d(-1%, -1%, 0);
+    }
+}
+
+.about-hero-shade {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.14),
+            rgba(0, 0, 0, 0.28) 42%,
+            rgba(0, 0, 0, 0.94)
+        );
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(1080px, 100%);
+}
+
+.about-back-link {
+    margin-bottom: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 13px;
+}
+
+.about-back-link:hover {
+    color: #ffffff;
+}
+
+.about-hero h1 {
+    max-width: 1050px;
+
+    font-size: clamp(64px, 9vw, 132px);
+    line-height: 0.88;
+    letter-spacing: -0.07em;
+}
+
+.about-hero-description {
+    max-width: 730px;
+    margin-top: 34px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: clamp(19px, 2vw, 25px);
+}
+
+.about-scroll-link {
+    margin-top: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    color: var(--gold-light);
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.about-hero-index {
+    position: absolute;
+    z-index: 2;
+    right: 5%;
+    bottom: 8%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    color: rgba(255, 255, 255, 0.42);
+
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-align: right;
+}
+
+
+/* Área das casas */
+
+.houses-section {
+    padding: 130px 7% 150px;
+
+    color: var(--about-ink);
+    background: var(--about-paper);
+}
+
+.houses-container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.houses-heading {
+    margin-bottom: 85px;
+
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    gap: 70px;
+    align-items: end;
+}
+
+.houses-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(62px, 8vw, 118px);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+}
+
+.houses-heading > p {
+    max-width: 600px;
+
+    color: var(--about-muted);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    line-height: 1.55;
+}
+
+.houses-kicker,
+.house-detail-label {
+    margin-bottom: 20px;
+
+    color: var(--about-orange);
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+
+/* Destaque nacional */
+
+.country-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 38px;
+    align-items: start;
+}
+
+.country-gallery-note {
+    margin-top: 19px;
+
+    color: var(--about-muted);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.country-image-stage {
+    position: relative;
+
+    min-height: 590px;
+
+    overflow: hidden;
+
+    background: #251a15;
+
+    border-radius: 27px;
+
+    box-shadow:
+        0 30px 80px rgba(59, 39, 27, 0.17);
+}
+
+.country-image-stage img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        opacity 350ms ease,
+        transform 900ms var(--ease-cinematic);
+}
+
+.country-image-stage:hover img {
+    transform: scale(1.035);
+}
+
+.country-image-shade {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 38%,
+            rgba(20, 10, 7, 0.82)
+        );
+}
+
+.country-image-label {
+    position: absolute;
+    z-index: 2;
+    right: 38px;
+    bottom: 38px;
+    left: 38px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.country-image-label small {
+    color: #f0c379;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+.country-image-label strong {
+    margin-top: 8px;
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(45px, 5vw, 76px);
+    font-weight: 400;
+}
+
+.country-photo-count {
+    position: absolute;
+    z-index: 2;
+    top: 24px;
+    right: 24px;
+
+    padding: 10px 15px;
+
+    display: flex;
+    gap: 8px;
+
+    color: #ffffff;
+    background: rgba(24, 16, 12, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+
+    backdrop-filter: blur(14px);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.country-gallery-button {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+    place-items: center;
+
+    cursor: pointer;
+
+    color: #ffffff;
+    background: rgba(24, 16, 12, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 50%;
+
+    backdrop-filter: blur(14px);
+
+    transform: translateY(-50%);
+
+    font-size: 32px;
+}
+
+.country-gallery-previous {
+    left: 20px;
+}
+
+.country-gallery-next {
+    right: 20px;
+}
+
+.country-information {
+    padding: 10px 0;
+}
+
+.country-information > h2 {
+    max-width: 830px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(52px, 6vw, 92px);
+    font-weight: 400;
+    line-height: 0.96;
+    letter-spacing: -0.05em;
+}
+
+.country-description {
+    margin-top: 26px;
+
+    color: var(--about-muted);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+}
+
+.contacts-card {
+    margin-top: 38px;
+    padding: 34px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 1px solid var(--about-border);
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 50px rgba(59, 39, 27, 0.08);
+}
+
+.contacts-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 31px;
+    font-weight: 400;
+}
+
+.contact-pills {
+    margin-top: 24px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+}
+
+.contact-pills a {
+    min-height: 43px;
+    padding: 0 16px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--about-border);
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        transform 250ms ease,
+        border-color 250ms ease,
+        box-shadow 250ms ease;
+}
+
+.contact-pills a:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(201, 119, 0, 0.5);
+
+    box-shadow:
+        0 10px 22px rgba(59, 39, 27, 0.1);
+}
+
+.contacts-card > p {
+    margin-top: 24px;
+
+    color: var(--about-muted);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+}
+
+
+/* Pesquisa */
+
+.houses-toolbar {
+    margin-top: 120px;
+    margin-bottom: 36px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.houses-toolbar h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 400;
+}
+
+.houses-search {
+    width: min(430px, 100%);
+    min-height: 58px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: rgba(255, 255, 255, 0.76);
+
+    border: 1px solid var(--about-border);
+    border-radius: 999px;
+}
+
+.houses-search span {
+    color: var(--about-orange);
+    font-size: 24px;
+}
+
+.houses-search input {
+    width: 100%;
+
+    color: var(--about-ink);
+    background: transparent;
+
+    border: 0;
+    outline: 0;
+
+    font-size: 15px;
+}
+
+
+/* Casas */
+
+.houses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.house-card {
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.68);
+
+    border: 1px solid var(--about-border);
+    border-radius: 24px;
+
+    transition:
+        border-color 300ms ease,
+        box-shadow 400ms ease,
+        transform 400ms var(--ease-cinematic);
+}
+
+.house-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(201, 119, 0, 0.48);
+
+    box-shadow:
+        0 24px 60px rgba(59, 39, 27, 0.1);
+}
+
+.house-card-header {
+    width: 100%;
+    min-height: 112px;
+    padding: 22px 30px;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: 20px;
+
+    cursor: pointer;
+
+    color: var(--about-ink);
+    background: transparent;
+
+    border: 0;
+
+    text-align: left;
+}
+
+.house-location-icon {
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--about-orange);
+    background: rgba(201, 119, 0, 0.1);
+
+    border-radius: 50%;
+}
+
+.house-card-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.house-card-title small {
+    color: var(--about-muted);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.house-card-title strong {
+    margin-top: 5px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 31px;
+    font-weight: 400;
+}
+
+.house-count {
+    color: var(--about-muted);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.house-card-arrow {
+    color: var(--about-orange);
+    font-size: 24px;
+}
+
+.house-card-content {
+    max-height: 0;
+
+    display: grid;
+    grid-template-columns: minmax(300px, 0.75fr) 1fr;
+    gap: 34px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        max-height 750ms var(--ease-cinematic),
+        opacity 350ms ease,
+        padding 750ms var(--ease-cinematic);
+}
+
+.house-card.is-open .house-card-content {
+    max-height: 620px;
+    padding: 0 30px 30px;
+
+    opacity: 1;
+}
+
+.house-card-image {
+    min-height: 310px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+}
+
+.house-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 800ms var(--ease-cinematic);
+}
+
+.house-card:hover .house-card-image img {
+    transform: scale(1.035);
+}
+
+.house-card-details {
+    padding: 22px 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.house-card-details address {
+    color: var(--about-ink);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(23px, 2.5vw, 35px);
+    font-style: normal;
+    line-height: 1.35;
+}
+
+.house-card-actions {
+    margin-top: 32px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.house-primary-link,
+.house-secondary-link {
+    min-height: 48px;
+    padding: 0 19px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 750;
+}
+
+.house-primary-link {
+    color: #ffffff;
+    background: var(--about-ink);
+}
+
+.house-secondary-link {
+    color: var(--about-ink);
+    background: #ffffff;
+
+    border: 1px solid var(--about-border);
+}
+
+.houses-empty-message {
+    padding: 70px 20px;
+
+    color: var(--about-muted);
+
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+}
+
+
+/* Chamada final */
+
+.about-final-call {
+    min-height: 650px;
+    padding: 100px 7%;
+
+    display: grid;
+    place-items: center;
+
+    color: #ffffff;
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(213, 180, 108, 0.15),
+            transparent 40%
+        ),
+        #050505;
+
+    text-align: center;
+}
+
+.about-final-call > div {
+    max-width: 900px;
+}
+
+.about-final-call h2 {
+    font-size: clamp(58px, 8vw, 110px);
+    line-height: 0.92;
+    letter-spacing: -0.065em;
+}
+
+.about-final-call p:not(.houses-kicker) {
+    max-width: 640px;
+    margin: 28px auto 0;
+
+    color: var(--text-secondary);
+
+    font-size: 20px;
+}
+
+.about-final-actions {
+    margin-top: 36px;
+
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.about-footer {
+    color: #ffffff;
+}
+
+
+/* Responsividade */
+
+@media (max-width: 1050px) {
+    .houses-heading,
+    .country-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .country-image-stage {
+        min-height: 560px;
+    }
+
+    .houses-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 760px) {
+    .about-hero {
+        min-height: 82vh;
+        padding:
+            calc(var(--navbar-height) + 60px)
+            22px
+            65px;
+    }
+
+    .about-hero h1 {
+        font-size: 58px;
+    }
+
+    .about-hero-index {
+        display: none;
+    }
+
+    .houses-section {
+        padding: 95px 20px 110px;
+    }
+
+    .houses-heading {
+        margin-bottom: 55px;
+    }
+
+    .country-image-stage {
+        min-height: 470px;
+    }
+
+    .country-image-label {
+        right: 24px;
+        bottom: 24px;
+        left: 24px;
+    }
+
+    .contacts-card {
+        padding: 25px 20px;
+    }
+
+    .house-card-header {
+        grid-template-columns: auto 1fr auto;
+        padding: 19px;
+    }
+
+    .house-count {
+        display: none;
+    }
+
+    .house-card-content {
+        grid-template-columns: 1fr;
+    }
+
+    .house-card.is-open .house-card-content {
+        max-height: 900px;
+        padding: 0 19px 19px;
+    }
+
+    .house-card-image {
+        min-height: 280px;
+    }
+
+    .about-final-actions {
+        flex-direction: column;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-hero-background {
+        animation: none;
+    }
+
+    .house-card,
+    .house-card-content,
+    .house-card-image img,
+    .country-image-stage img {
+        transition: none;
+    }
+}
+/* =========================================================
+   BOTÕES DA CHAMADA FINAL
+   ========================================================= */
+
+.about-final-actions {
+    position: relative;
+    z-index: 5;
+
+    margin-top: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.about-final-actions .button {
+    position: relative;
+    z-index: 2;
+
+    min-width: 190px;
+    min-height: 54px;
+    padding: 0 28px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    pointer-events: auto;
+
+    border-radius: 999px;
+
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+
+    transition:
+        transform 350ms cubic-bezier(0.16, 1, 0.3, 1),
+        background 250ms ease,
+        border-color 250ms ease,
+        box-shadow 350ms ease;
+}
+
+.about-final-actions .button-primary {
+    color: #06111e;
+    background: #ffffff;
+
+    border: 1px solid #ffffff;
+}
+
+.about-final-actions .button-primary:hover {
+    color: #06111e;
+    background: #f2d89b;
+
+    border-color: #f2d89b;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 38px rgba(0, 0, 0, 0.36),
+        0 0 30px rgba(213, 180, 108, 0.15);
+}
+
+.about-final-actions .button-secondary {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.about-final-actions .button-secondary:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.13);
+
+    border-color:
+        rgba(242, 216, 155, 0.48);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 38px rgba(0, 0, 0, 0.32);
+}
+
+@media (max-width: 560px) {
+    .about-final-actions {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .about-final-actions .button {
+        width: 100%;
+    }
+}
+/* =========================================================
+   SOBRE NÓS: TEMA ESCURO COM FUNDO ORNAMENTAL
+   ========================================================= */
+
+.about-page {
+    position: relative;
+
+    color: var(--about-ink);
+
+    background:
+        radial-gradient(
+            circle at 14% 18%,
+            rgba(16, 93, 128, 0.28),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 86% 66%,
+            rgba(9, 67, 107, 0.24),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #01040c 0%,
+            #031225 32%,
+            #072944 60%,
+            #020a18 100%
+        ) !important;
+
+    background-attachment: fixed !important;
+}
+
+
+/* =========================================================
+   FUNDO DAMASCO
+   ========================================================= */
+
+.about-page::before {
+    content: "";
+
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+
+    background-image:
+        url("../images/fundos/fundo-damasco.png");
+
+    background-repeat: repeat;
+    background-position: center top;
+    background-size: 420px auto;
+
+    opacity: 0.9;
+
+    filter:
+        brightness(1.4)
+        contrast(1.08);
+
+    pointer-events: none !important;
+}
+
+
+/* Vinheta escura por cima do desenho */
+
+.about-page::after {
+    content: "";
+
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 3, 10, 0.4),
+            transparent 18%,
+            transparent 82%,
+            rgba(0, 3, 10, 0.4)
+        ),
+        radial-gradient(
+            ellipse at center,
+            transparent 20%,
+            rgba(0, 3, 10, 0.36) 100%
+        );
+
+    pointer-events: none !important;
+}
+
+
+/* Conteúdo acima do fundo */
+
+.about-page > main,
+.about-page > footer {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   ÁREA DAS CASAS
+   ========================================================= */
+
+.about-page .houses-section {
+    position: relative;
+    z-index: 1;
+
+    color: var(--about-ink);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(1, 7, 17, 0.58) 0%,
+            rgba(6, 31, 51, 0.34) 46%,
+            rgba(1, 8, 18, 0.62) 100%
+        ) !important;
+
+    backdrop-filter:
+        blur(2px);
+
+    -webkit-backdrop-filter:
+        blur(2px);
+}
+
+.houses-heading h2,
+.houses-toolbar h2,
+.country-information > h2,
+.contacts-card h3,
+.house-card-title strong,
+.house-card-details address {
+    color: #ffffff;
+}
+
+.houses-heading > p,
+.country-gallery-note,
+.country-description,
+.contacts-card > p,
+.house-count,
+.house-card-title small,
+.houses-empty-message {
+    color: var(--about-muted);
+}
+
+.houses-kicker,
+.house-detail-label {
+    color: var(--about-gold);
+}
+
+
+/* =========================================================
+   DESTAQUE DE PORTUGAL
+   ========================================================= */
+
+.country-image-stage {
+    background: #061322;
+
+    border:
+        1px solid rgba(137, 192, 211, 0.16);
+
+    box-shadow:
+        0 32px 90px rgba(0, 4, 14, 0.52),
+        0 0 48px rgba(34, 116, 145, 0.08);
+}
+
+.country-image-shade {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2, 12, 22, 0.04) 25%,
+            rgba(1, 8, 17, 0.88) 100%
+        );
+}
+
+.country-photo-count,
+.country-gallery-button {
+    color: #ffffff;
+
+    background:
+        rgba(3, 18, 32, 0.72);
+
+    border:
+        1px solid rgba(151, 204, 220, 0.22);
+
+    backdrop-filter:
+        blur(18px)
+        saturate(130%);
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(130%);
+}
+
+
+/* =========================================================
+   CARTÃO DE CONTACTOS
+   ========================================================= */
+
+.contacts-card {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 52, 72, 0.72),
+            rgba(4, 18, 33, 0.8)
+        ) !important;
+
+    border:
+        1px solid var(--about-border);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.045),
+        0 24px 70px
+        rgba(0, 4, 14, 0.38);
+
+    backdrop-filter:
+        blur(22px)
+        saturate(125%);
+
+    -webkit-backdrop-filter:
+        blur(22px)
+        saturate(125%);
+}
+
+.contact-pills a {
+    color: #f5f7fa;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border:
+        1px solid rgba(142, 200, 218, 0.16);
+
+    transition:
+        color 250ms ease,
+        background 250ms ease,
+        border-color 250ms ease,
+        transform 250ms ease,
+        box-shadow 250ms ease;
+}
+
+.contact-pills a:hover {
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.11);
+
+    border-color:
+        rgba(242, 216, 155, 0.42);
+
+    box-shadow:
+        0 12px 30px rgba(0, 4, 13, 0.35),
+        0 0 25px rgba(213, 180, 108, 0.08);
+}
+
+
+/* =========================================================
+   PESQUISA
+   ========================================================= */
+
+.houses-search {
+    color: #ffffff;
+
+    background:
+        rgba(8, 31, 49, 0.76);
+
+    border:
+        1px solid rgba(137, 192, 211, 0.17);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.035),
+        0 18px 45px
+        rgba(0, 4, 13, 0.24);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.houses-search span {
+    color: var(--about-gold);
+}
+
+.houses-search input {
+    color: #ffffff;
+}
+
+.houses-search input::placeholder {
+    color: rgba(207, 222, 231, 0.52);
+}
+
+
+/* =========================================================
+   CARTÕES DAS CASAS
+   ========================================================= */
+
+.house-card {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 48, 68, 0.72),
+            rgba(4, 18, 32, 0.82)
+        ) !important;
+
+    border:
+        1px solid var(--about-border);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.035),
+        0 22px 60px
+        rgba(0, 4, 14, 0.27);
+
+    backdrop-filter:
+        blur(20px)
+        saturate(125%);
+
+    -webkit-backdrop-filter:
+        blur(20px)
+        saturate(125%);
+}
+
+.house-card:hover,
+.house-card.is-open {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(22, 63, 84, 0.78),
+            rgba(5, 23, 40, 0.88)
+        ) !important;
+
+    border-color:
+        rgba(242, 216, 155, 0.28);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.055),
+        0 30px 85px
+        rgba(0, 4, 14, 0.42),
+        0 0 34px
+        rgba(34, 119, 149, 0.07);
+}
+
+.house-card-header {
+    position: relative;
+    z-index: 2;
+
+    color: #ffffff;
+
+    background: transparent;
+
+    pointer-events: auto;
+}
+
+.house-location-icon {
+    color: var(--about-gold);
+
+    background:
+        rgba(213, 180, 108, 0.1);
+
+    border:
+        1px solid rgba(213, 180, 108, 0.2);
+}
+
+.house-card-arrow {
+    color: var(--about-gold);
+}
+
+.house-card-details address {
+    color: #ffffff;
+}
+
+.house-card-image {
+    background: #061322;
+
+    border:
+        1px solid rgba(137, 192, 211, 0.12);
+}
+
+
+/* =========================================================
+   BOTÕES DAS CASAS
+   ========================================================= */
+
+.house-primary-link {
+    color: #07111d;
+
+    background: #ffffff;
+
+    border: 1px solid #ffffff;
+
+    transition:
+        transform 300ms var(--ease-cinematic),
+        background 250ms ease,
+        box-shadow 300ms ease;
+}
+
+.house-primary-link:hover {
+    background: var(--about-gold);
+
+    border-color: var(--about-gold);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 36px rgba(0, 0, 0, 0.34),
+        0 0 24px rgba(213, 180, 108, 0.1);
+}
+
+.house-secondary-link {
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.18);
+}
+
+.house-secondary-link:hover {
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    border-color:
+        rgba(242, 216, 155, 0.4);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   CHAMADA FINAL
+   ========================================================= */
+
+.about-final-call {
+    position: relative;
+    z-index: 1;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(41, 128, 155, 0.15),
+            transparent 42%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(1, 6, 14, 0.64),
+            rgba(5, 28, 47, 0.38),
+            rgba(1, 6, 14, 0.7)
+        ) !important;
+}
+
+.about-final-call > div {
+    position: relative;
+    z-index: 4;
+}
+
+
+/* =========================================================
+   BOTÕES DA CHAMADA FINAL
+   ========================================================= */
+
+.about-final-actions {
+    position: relative;
+    z-index: 5;
+
+    margin-top: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.about-final-actions .button {
+    position: relative;
+    z-index: 2;
+
+    min-width: 190px;
+    min-height: 54px;
+    padding: 0 28px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    pointer-events: auto;
+
+    border-radius: 999px;
+
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+
+    text-decoration: none;
+}
+
+.about-final-actions .button-primary {
+    color: #06111e;
+    background: #ffffff;
+
+    border: 1px solid #ffffff;
+}
+
+.about-final-actions .button-secondary {
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.19);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =========================================================
+   CAMADAS DECORATIVAS
+   ========================================================= */
+
+.about-page::before,
+.about-page::after,
+.about-final-call::before,
+.about-final-call::after,
+.houses-section::before,
+.houses-section::after {
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 760px) {
+    .about-page::before {
+        background-size: 300px auto;
+        opacity: 0.14;
+    }
+
+    .contacts-card,
+    .house-card {
+        backdrop-filter:
+            blur(15px)
+            saturate(115%);
+
+        -webkit-backdrop-filter:
+            blur(15px)
+            saturate(115%);
+    }
+}
+
+@media (max-width: 560px) {
+    .about-final-actions {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .about-final-actions .button {
+        width: 100%;
+    }
+}

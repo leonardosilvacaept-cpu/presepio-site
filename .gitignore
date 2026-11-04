@@ -1,0 +1,24 @@
+/vv.html
+# Vídeos grandes servidos externamente
+images/presepio-hero.mp4
+images/video-vertical.mp4
+
+# Ficheiros locais
+.DS_Store
+node_modules/
+.wrangler/
+.env
+.env.*
+*.log
+
+# Vídeos grandes servidos externamente
+images/presepio-hero.mp4
+images/video-vertical.mp4
+
+# Ficheiros locais
+.DS_Store
+node_modules/
+.wrangler/
+.env
+.env.*
+*.log

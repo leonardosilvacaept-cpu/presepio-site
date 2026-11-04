@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta
+        name="description"
+        content="Área de administração do Presépio 2026."
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080808"
+    >
+
+    <title>
+        Administração | Presépio 2026
+    </title>
+
+    <link
+    rel="stylesheet"
+    href="./admin.css?v=4"
+>
+
+    <link
+        rel="icon"
+        href="../images/favicon.png"
+        type="image/png"
+    >
+</head>
+
+<body class="admin-login-page">
+
+    <main class="admin-login-layout">
+
+        <!-- =================================================
+             ÁREA VISUAL
+             ================================================= -->
+
+        <section
+            class="admin-login-visual"
+            aria-label="Apresentação do painel de administração"
+        >
+            <div
+                class="admin-login-background"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="admin-login-overlay"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="admin-login-glow"
+                aria-hidden="true"
+            ></div>
+
+            <a
+                class="admin-login-brand"
+                href="../index.html"
+                aria-label="Voltar ao site do Presépio 2026"
+            >
+                <span
+                    class="admin-brand-symbol"
+                    aria-hidden="true"
+                >
+                    ✦
+                </span>
+
+                <span>
+                    <strong>
+                        Presépio 2026
+                    </strong>
+
+                    <small>
+                        Arautos do Evangelho
+                    </small>
+                </span>
+            </a>
+
+            <div class="admin-login-introduction">
+                <p class="admin-eyebrow">
+                    ÁREA RESERVADA
+                </p>
+
+                <h1>
+                    Gerir a experiência<br>
+                    com simplicidade.
+                </h1>
+
+                <p>
+                    Atualize conteúdos, imagens, horários,
+                    marcações e a versão móvel através
+                    de um único painel.
+                </p>
+            </div>
+
+            <div class="admin-login-visual-footer">
+                <span>
+                    Administração segura
+                </span>
+
+                <span>
+                    Presépio 2026
+                </span>
+            </div>
+        </section>
+
+        <!-- =================================================
+             FORMULÁRIO DE AUTENTICAÇÃO
+             ================================================= -->
+
+        <section
+            class="admin-login-panel"
+            aria-labelledby="admin-login-title"
+        >
+            <div class="admin-login-card">
+
+                <a
+                    class="admin-back-link"
+                    href="../index.html"
+                >
+                    <span aria-hidden="true">
+                        ←
+                    </span>
+
+                    Voltar ao site
+                </a>
+
+                <div class="admin-login-heading">
+                    <span
+                        class="admin-login-icon"
+                        aria-hidden="true"
+                    >
+                        ✦
+                    </span>
+
+                    <p class="admin-eyebrow">
+                        INICIAR SESSÃO
+                    </p>
+
+                    <h2 id="admin-login-title">
+                        Bem-vindo.
+                    </h2>
+
+                    <p>
+                        Introduza os dados da sua conta
+                        de administração.
+                    </p>
+                </div>
+
+                <form
+                    id="admin-login-form"
+                    class="admin-login-form"
+                    method="post"
+                    novalidate
+                >
+                    <!-- EMAIL -->
+
+                    <div class="admin-form-field">
+                        <label for="admin-email">
+                            Email
+                        </label>
+
+                        <div class="admin-input-wrapper">
+                            <span
+                                class="admin-input-icon"
+                                aria-hidden="true"
+                            >
+                                @
+                            </span>
+
+                            <input
+                                id="admin-email"
+                                name="email"
+                                type="email"
+                                inputmode="email"
+                                autocomplete="username"
+                                autocapitalize="none"
+                                spellcheck="false"
+                                placeholder="administrador@exemplo.pt"
+                                aria-describedby="admin-email-error"
+                                required
+                            >
+                        </div>
+
+                        <small
+                            id="admin-email-error"
+                            class="admin-field-error"
+                            aria-live="polite"
+                        ></small>
+                    </div>
+
+                    <!-- PALAVRA-PASSE -->
+
+                    <div class="admin-form-field">
+                        <div class="admin-label-row">
+                            <label for="admin-password">
+                                Palavra-passe
+                            </label>
+
+                            <button
+                                id="admin-forgot-password"
+                                class="admin-text-button"
+                                type="button"
+                            >
+                                Recuperar acesso
+                            </button>
+                        </div>
+
+                        <div class="admin-input-wrapper">
+                            <span
+                                class="admin-input-icon"
+                                aria-hidden="true"
+                            >
+                                ●
+                            </span>
+
+                            <input
+                                id="admin-password"
+                                name="password"
+                                type="password"
+                                autocomplete="current-password"
+                                placeholder="Introduza a palavra-passe"
+                                aria-describedby="admin-password-error"
+                                required
+                            >
+
+                            <button
+                                id="admin-toggle-password"
+                                class="admin-password-toggle"
+                                type="button"
+                                aria-label="Mostrar palavra-passe"
+                                aria-pressed="false"
+                            >
+                                Mostrar
+                            </button>
+                        </div>
+
+                        <small
+                            id="admin-password-error"
+                            class="admin-field-error"
+                            aria-live="polite"
+                        ></small>
+                    </div>
+
+                    <!-- MANTER SESSÃO -->
+
+                    <label class="admin-remember">
+                        <input
+                            id="admin-remember"
+                            name="remember"
+                            type="checkbox"
+                        >
+
+                        <span>
+                            Manter a sessão iniciada neste dispositivo
+                        </span>
+                    </label>
+
+                    <!-- MENSAGEM GERAL -->
+
+                    <div
+                        id="admin-login-message"
+                        class="admin-form-message"
+                        role="alert"
+                        aria-live="assertive"
+                    ></div>
+
+                    <!-- SUBMETER -->
+
+                    <button
+                        id="admin-login-submit"
+                        class="admin-primary-button"
+                        type="submit"
+                    >
+                        <span class="admin-login-submit-text">
+                            Entrar no painel
+                        </span>
+
+                        <span
+                            class="admin-login-submit-arrow"
+                            aria-hidden="true"
+                        >
+                            →
+                        </span>
+
+                        <span
+                            class="admin-login-spinner"
+                            aria-hidden="true"
+                            hidden
+                        ></span>
+                    </button>
+                </form>
+
+                <div class="admin-login-security">
+                    <span aria-hidden="true">
+                        ●
+                    </span>
+
+                    <p>
+                        O acesso deve ser protegido através
+                        de autenticação segura. A palavra-passe
+                        nunca deve ficar escrita no HTML,
+                        no JavaScript ou nos ficheiros públicos
+                        do site.
+                    </p>
+                </div>
+
+                <noscript>
+                    <p class="admin-noscript-message">
+                        É necessário ativar o JavaScript para
+                        iniciar sessão no painel.
+                    </p>
+                </noscript>
+            </div>
+        </section>
+    </main>
+
+    <!-- =====================================================
+         MODAL DE RECUPERAÇÃO
+         ===================================================== -->
+
+    <div
+        id="admin-recovery-modal"
+        class="admin-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-labelledby="admin-recovery-title"
+    >
+        <div class="admin-modal-card">
+            <button
+                id="admin-recovery-close"
+                class="admin-modal-close"
+                type="button"
+                aria-label="Fechar recuperação de acesso"
+            >
+                ×
+            </button>
+
+            <div id="admin-recovery-content">
+                <p class="admin-eyebrow">
+                    RECUPERAR ACESSO
+                </p>
+
+                <h2 id="admin-recovery-title">
+                    Repor palavra-passe
+                </h2>
+
+                <p>
+                    Introduza o email associado à conta
+                    de administração.
+                </p>
+
+                <form
+                    id="admin-recovery-form"
+                    class="admin-login-form"
+                    novalidate
+                >
+                    <div class="admin-form-field">
+                        <label for="admin-recovery-email">
+                            Email
+                        </label>
+
+                        <div class="admin-input-wrapper">
+                            <span
+                                class="admin-input-icon"
+                                aria-hidden="true"
+                            >
+                                @
+                            </span>
+
+                            <input
+                                id="admin-recovery-email"
+                                name="recoveryEmail"
+                                type="email"
+                                inputmode="email"
+                                autocomplete="email"
+                                autocapitalize="none"
+                                spellcheck="false"
+                                placeholder="administrador@exemplo.pt"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div
+                        id="admin-recovery-message"
+                        class="admin-form-message"
+                        role="status"
+                        aria-live="polite"
+                    ></div>
+
+                    <button
+                        id="admin-recovery-submit"
+                        class="admin-primary-button"
+                        type="submit"
+                    >
+                        <span>
+                            Enviar ligação de recuperação
+                        </span>
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================
+         SCRIPTS
+         ===================================================== -->
+
+    <!--
+        Se utilizares Supabase Auth, carrega primeiro
+        a biblioteca e a configuração do Supabase.
+    -->
+
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./supabase-config.js?v=1"></script>
+    -->
+    <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+<script src="./supabase-config.js?v=1"></script>
+<script src="./admin.js?v=4"></script>
+
+    <script src="./admin.js?v=3"></script>
+</body>
+</html>

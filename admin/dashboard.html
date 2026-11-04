@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Painel de administração do Presépio 2026."
+    >
+
+    <meta
+        name="theme-color"
+        content="#080808"
+    >
+
+    <title>
+        Painel de Administração | Presépio 2026
+    </title>
+
+    <link
+    rel="stylesheet"
+    href="./admin.css?v=4"
+>
+</head>
+
+<body class="admin-dashboard-page">
+    <div class="admin-dashboard-layout">
+
+        <!-- ================================================
+             NAVEGAÇÃO LATERAL
+             ================================================ -->
+
+        <aside
+            id="admin-sidebar"
+            class="admin-sidebar"
+        >
+            <div class="admin-sidebar-header">
+                <a
+                    class="admin-logo"
+                    href="./dashboard.html"
+                    aria-label="Página principal da administração"
+                >
+                    <span
+                        class="admin-brand-symbol"
+                        aria-hidden="true"
+                    >
+                        ✦
+                    </span>
+
+                    <span class="admin-logo-copy">
+                        <strong>Presépio</strong>
+                        <small>Administração</small>
+                    </span>
+                </a>
+
+                <button
+                    id="admin-sidebar-close"
+                    class="admin-sidebar-close"
+                    type="button"
+                    aria-label="Fechar navegação"
+                >
+                    ×
+                </button>
+            </div>
+
+            <nav
+                class="admin-navigation"
+                aria-label="Navegação da administração"
+            >
+                <p class="admin-navigation-label">
+                    VISÃO GERAL
+                </p>
+
+                <button
+                    class="admin-navigation-link is-active"
+                    type="button"
+                    data-admin-section="overview"
+                >
+                    <span
+                        class="admin-navigation-icon"
+                        aria-hidden="true"
+                    >
+                        ◫
+                    </span>
+
+                    <span>Resumo</span>
+                </button>
+
+                <button
+                    class="admin-navigation-link"
+                    type="button"
+                    data-admin-section="bookings"
+                >
+                    <span
+                        class="admin-navigation-icon"
+                        aria-hidden="true"
+                    >
+                        ◷
+                    </span>
+
+                    <span>Marcações</span>
+
+                    <span class="admin-navigation-badge">
+                        12
+                    </span>
+                </button>
+
+                <p class="admin-navigation-label">
+                    CONTEÚDOS
+                </p>
+
+                <button
+                    class="admin-navigation-link"
+                    type="button"
+                    data-admin-section="content"
+                >
+                    <span
+                        class="admin-navigation-icon"
+                        aria-hidden="true"
+                    >
+                        ✎
+                    </span>
+
+                    <span>Textos do site</span>
+                </button>
+
+                <button
+                    class="admin-navigation-link"
+                    type="button"
+                    data-admin-section="media"
+                >
+                    <span
+                        class="admin-navigation-icon"
+                        aria-hidden="true"
+                    >
+                        ▧
+                    </span>
+
+                    <span>Imagens e vídeos</span>
+                </button>
+
+                <button
+                    class="admin-navigation-link"
+                    type="button"
+                    data-admin-section="gallery"
+                >
+                    <span
+                        class="admin-navigation-icon"
+                        aria-hidden="true"
+                    >
+                        ▦
+                    </span>
+
+                    <span>Galeria</span>
+                </button>
+
+                <button
+                    class="admin-navigation-link"
+                    type="button"
+                    data-admin-section="mobile"
+                >
+                    <span
+                        class="admin-navigation-icon"
+                        aria-hidden="true"
+                    >
+                        ▣
+                    </span>
+
+                    <span>Site móvel</span>
+                </button>
+
+                <p class="admin-navigation-label">
+                    ORGANIZAÇÃO
+                </p>
+
+                <button
+                    class="admin-navigation-link"
+                    type="button"
+                    data-admin-section="schedule"
+                >
+                    <span
+                        class="admin-navigation-icon"
+                        aria-hidden="true"
+                    >
+                        ◴
+                    </span>
+
+                    <span>Datas e horários</span>
+                </button>
+
+                <button
+                    class="admin-navigation-link"
+                    type="button"
+                    data-admin-section="settings"
+                >
+                    <span
+                        class="admin-navigation-icon"
+                        aria-hidden="true"
+                    >
+                        ⚙
+                    </span>
+
+                    <span>Definições</span>
+                </button>
+            </nav>
+
+            <div class="admin-sidebar-footer">
+                <a
+                    class="admin-view-site"
+                    href="../index.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <span>Ver site público</span>
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+                <button
+                    id="admin-logout"
+                    class="admin-user-card"
+                    type="button"
+                >
+                    <span class="admin-user-avatar">
+                        AD
+                    </span>
+
+                    <span class="admin-user-information">
+                        <strong>Administrador</strong>
+                        <small>Terminar sessão</small>
+                    </span>
+
+                    <span aria-hidden="true">→</span>
+                </button>
+            </div>
+        </aside>
+
+        <button
+            id="admin-sidebar-backdrop"
+            class="admin-sidebar-backdrop"
+            type="button"
+            aria-label="Fechar navegação"
+        ></button>
+
+        <!-- ================================================
+             CONTEÚDO PRINCIPAL
+             ================================================ -->
+
+        <div class="admin-main-area">
+            <header class="admin-topbar">
+                <div class="admin-topbar-left">
+                    <button
+                        id="admin-sidebar-toggle"
+                        class="admin-sidebar-toggle"
+                        type="button"
+                        aria-label="Abrir navegação"
+                        aria-expanded="false"
+                    >
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <div>
+                        <p id="admin-page-eyebrow">
+                            VISÃO GERAL
+                        </p>
+
+                        <h1 id="admin-page-title">
+                            Resumo
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="admin-topbar-actions">
+                    <button
+                        id="admin-preview-button"
+                        class="admin-secondary-button"
+                        type="button"
+                    >
+                        <span aria-hidden="true">◉</span>
+                        Pré-visualizar
+                    </button>
+
+                    <button
+                        id="admin-save-button"
+                        class="admin-primary-button admin-save-button"
+                        type="button"
+                    >
+                        <span>Guardar alterações</span>
+                        <span aria-hidden="true">✓</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="admin-content">
+
+                <!-- ========================================
+                     RESUMO
+                     ======================================== -->
+
+                <section
+                    id="admin-section-overview"
+                    class="admin-panel-section is-active"
+                    data-section-title="Resumo"
+                    data-section-eyebrow="VISÃO GERAL"
+                >
+                    <div class="admin-welcome-panel">
+                        <div>
+                            <p class="admin-eyebrow">
+                                PRESÉPIO 2026
+                            </p>
+
+                            <h2>
+                                Boa tarde,<br>
+                                Administrador.
+                            </h2>
+
+                            <p>
+                                Aqui pode acompanhar a atividade do site
+                                e atualizar todos os conteúdos.
+                            </p>
+                        </div>
+
+                        <div
+                            class="admin-welcome-symbol"
+                            aria-hidden="true"
+                        >
+                            ✦
+                        </div>
+                    </div>
+
+                    <div class="admin-statistics-grid">
+                        <article class="admin-statistic-card">
+                            <div class="admin-statistic-header">
+                                <span class="admin-statistic-icon">◷</span>
+                                <span class="admin-statistic-period">Hoje</span>
+                            </div>
+
+                            <strong>12</strong>
+                            <h3>Marcações</h3>
+
+                            <p>
+                                <span class="admin-positive">+3</span>
+                                comparativamente a ontem
+                            </p>
+                        </article>
+
+                        <article class="admin-statistic-card">
+                            <div class="admin-statistic-header">
+                                <span class="admin-statistic-icon">◎</span>
+                                <span class="admin-statistic-period">Hoje</span>
+                            </div>
+
+                            <strong>68</strong>
+                            <h3>Visitantes</h3>
+                            <p>Distribuídos por cinco sessões</p>
+                        </article>
+
+                        <article class="admin-statistic-card">
+                            <div class="admin-statistic-header">
+                                <span class="admin-statistic-icon">✦</span>
+                                <span class="admin-statistic-period">Agora</span>
+                            </div>
+
+                            <strong>4</strong>
+                            <h3>Sessões disponíveis</h3>
+                            <p>Uma sessão está completa</p>
+                        </article>
+
+                        <article class="admin-statistic-card">
+                            <div class="admin-statistic-header">
+                                <span class="admin-statistic-icon">▧</span>
+                                <span class="admin-statistic-period">Total</span>
+                            </div>
+
+                            <strong>412</strong>
+                            <h3>Visitas ao site</h3>
+                            <p>Nos últimos sete dias</p>
+                        </article>
+                    </div>
+
+                    <div class="admin-dashboard-grid">
+                        <section class="admin-widget admin-widget-large">
+                            <div class="admin-widget-header">
+                                <div>
+                                    <p class="admin-widget-eyebrow">
+                                        ATIVIDADE
+                                    </p>
+
+                                    <h2>
+                                        Marcações recentes
+                                    </h2>
+                                </div>
+
+                                <button
+                                    class="admin-text-button"
+                                    type="button"
+                                    data-go-to-section="bookings"
+                                >
+                                    Ver todas
+                                    <span aria-hidden="true">→</span>
+                                </button>
+                            </div>
+
+                            <div class="admin-table-wrapper">
+                                <table class="admin-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Responsável</th>
+                                            <th>Data</th>
+                                            <th>Hora</th>
+                                            <th>Visitantes</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="admin-table-person">
+                                                    <span>AM</span>
+
+                                                    <div>
+                                                        <strong>Ana Martins</strong>
+                                                        <small>Família</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>12 dez. 2026</td>
+                                            <td>14:00</td>
+                                            <td>4</td>
+
+                                            <td>
+                                                <span class="admin-status confirmed">
+                                                    Confirmada
+                                                </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="admin-table-person">
+                                                    <span>JP</span>
+
+                                                    <div>
+                                                        <strong>João Pereira</strong>
+                                                        <small>Grupo</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>12 dez. 2026</td>
+                                            <td>15:30</td>
+                                            <td>12</td>
+
+                                            <td>
+                                                <span class="admin-status confirmed">
+                                                    Confirmada
+                                                </span>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div class="admin-table-person">
+                                                    <span>EP</span>
+
+                                                    <div>
+                                                        <strong>Escola do Porto</strong>
+                                                        <small>Escola</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>13 dez. 2026</td>
+                                            <td>14:45</td>
+                                            <td>25</td>
+
+                                            <td>
+                                                <span class="admin-status full">
+                                                    Sessão completa
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <aside class="admin-widget">
+                            <div class="admin-widget-header">
+                                <div>
+                                    <p class="admin-widget-eyebrow">
+                                        SISTEMA
+                                    </p>
+
+                                    <h2>Estado do site</h2>
+                                </div>
+                            </div>
+
+                            <div class="admin-system-list">
+                                <div>
+                                    <span class="admin-system-indicator active"></span>
+
+                                    <div>
+                                        <strong>Site público</strong>
+                                        <small>Online e disponível</small>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span class="admin-system-indicator active"></span>
+
+                                    <div>
+                                        <strong>Marcações</strong>
+                                        <small>A aceitar reservas</small>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span class="admin-system-indicator warning"></span>
+
+                                    <div>
+                                        <strong>Vídeo vertical</strong>
+                                        <small>Verifique o ficheiro publicado</small>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <span class="admin-system-indicator active"></span>
+
+                                    <div>
+                                        <strong>Galeria</strong>
+                                        <small>6 imagens publicadas</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </section>
+
+                <!-- ========================================
+                     MARCAÇÕES
+                     ======================================== -->
+
+                <section
+                    id="admin-section-bookings"
+                    class="admin-panel-section"
+                    data-section-title="Marcações"
+                    data-section-eyebrow="GESTÃO DE VISITAS"
+                    hidden
+                >
+                    <div class="admin-section-heading">
+                        <div>
+                            <p class="admin-eyebrow">
+                                GESTÃO DE VISITAS
+                            </p>
+
+                            <h2>Marcações</h2>
+
+                            <p>
+                                Consulte, filtre e organize todas as reservas.
+                            </p>
+                        </div>
+
+                        <button
+                            id="admin-new-booking"
+                            class="admin-primary-button"
+                            type="button"
+                        >
+                            <span>Nova marcação</span>
+                            <span aria-hidden="true">+</span>
+                        </button>
+                    </div>
+
+                    <div class="admin-filter-bar">
+                        <label class="admin-search">
+                            <span aria-hidden="true">⌕</span>
+
+                            <input
+                                id="admin-booking-search"
+                                type="search"
+                                placeholder="Pesquisar por nome, email ou referência"
+                            >
+                        </label>
+
+                        <select
+                            id="admin-booking-date-filter"
+                            aria-label="Filtrar marcações por data"
+                        >
+                            <option value="all">Todas as datas</option>
+                            <option value="today">Hoje</option>
+                            <option value="tomorrow">Amanhã</option>
+                            <option value="week">Esta semana</option>
+                        </select>
+
+                        <select
+                            id="admin-booking-status-filter"
+                            aria-label="Filtrar por estado"
+                        >
+                            <option value="all">Todos os estados</option>
+                            <option value="confirmed">Confirmadas</option>
+                            <option value="cancelled">Canceladas</option>
+                        </select>
+
+                        <button
+                            id="admin-export-bookings"
+                            class="admin-secondary-button"
+                            type="button"
+                        >
+                            Exportar
+                        </button>
+                    </div>
+
+                    <div class="admin-empty-state">
+                        <span aria-hidden="true">◷</span>
+
+                        <h3>Dados reais por ligar</h3>
+
+                        <p>
+                            As marcações aparecerão aqui depois de ligarmos
+                            o painel à base de dados.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ========================================
+                     TEXTOS DO SITE
+                     ======================================== -->
+
+                <section
+                    id="admin-section-content"
+                    class="admin-panel-section"
+                    data-section-title="Textos do site"
+                    data-section-eyebrow="CONTEÚDOS"
+                    hidden
+                >
+                    <div class="admin-section-heading">
+                        <div>
+                            <p class="admin-eyebrow">CONTEÚDOS</p>
+                            <h2>Textos do site</h2>
+
+                            <p>
+                                Edite títulos, descrições e informações
+                                apresentadas no site público.
+                            </p>
+                        </div>
+                    </div>
+
+                    <form
+                        id="admin-content-form"
+                        class="admin-editor-layout"
+                    >
+                        <aside class="admin-editor-navigation">
+                            <button
+                                class="admin-editor-navigation-link is-active"
+                                type="button"
+                                data-editor-panel="hero"
+                            >
+                                Página inicial
+                            </button>
+
+                            <button
+                                class="admin-editor-navigation-link"
+                                type="button"
+                                data-editor-panel="experience"
+                            >
+                                Experiência
+                            </button>
+
+                            <button
+                                class="admin-editor-navigation-link"
+                                type="button"
+                                data-editor-panel="about"
+                            >
+                                Quem somos
+                            </button>
+
+                            <button
+                                class="admin-editor-navigation-link"
+                                type="button"
+                                data-editor-panel="visit"
+                            >
+                                Visitar
+                            </button>
+
+                            <button
+                                class="admin-editor-navigation-link"
+                                type="button"
+                                data-editor-panel="contacts"
+                            >
+                                Contactos
+                            </button>
+                        </aside>
+
+                        <div class="admin-editor-content">
+                            <div
+                                id="admin-editor-hero"
+                                class="admin-editor-panel is-active"
+                            >
+                                <div class="admin-editor-heading">
+                                    <span>01</span>
+
+                                    <div>
+                                        <h3>Página inicial</h3>
+
+                                        <p>
+                                            Conteúdo apresentado sobre
+                                            o vídeo principal.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="admin-editor-fields">
+                                    <div class="admin-form-field">
+                                        <label for="admin-hero-eyebrow">
+                                            Texto pequeno
+                                        </label>
+
+                                        <input
+                                            id="admin-hero-eyebrow"
+                                            name="heroEyebrow"
+                                            type="text"
+                                            value="PRESÉPIO 2026"
+                                        >
+                                    </div>
+
+                                    <div class="admin-form-field">
+                                        <label for="admin-hero-title">
+                                            Título principal
+                                        </label>
+
+                                        <textarea
+                                            id="admin-hero-title"
+                                            name="heroTitle"
+                                            rows="4"
+                                        >Uma história eterna.
+Uma experiência inesquecível.</textarea>
+
+                                        <small>
+                                            Use uma nova linha para controlar
+                                            a quebra do título.
+                                        </small>
+                                    </div>
+
+                                    <div class="admin-form-field">
+                                        <label for="admin-hero-description">
+                                            Descrição
+                                        </label>
+
+                                        <textarea
+                                            id="admin-hero-description"
+                                            name="heroDescription"
+                                            rows="4"
+                                        >Luz, música e movimento unem-se para dar vida à história do nascimento de Jesus.</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                id="admin-editor-experience"
+                                class="admin-editor-panel"
+                                hidden
+                            >
+                                <div class="admin-editor-heading">
+                                    <span>02</span>
+
+                                    <div>
+                                        <h3>Experiência</h3>
+                                        <p>Edite o texto da apresentação imersiva.</p>
+                                    </div>
+                                </div>
+
+                                <div class="admin-editor-fields">
+                                    <div class="admin-form-field">
+                                        <label for="admin-experience-title">
+                                            Título
+                                        </label>
+
+                                        <input
+                                            id="admin-experience-title"
+                                            name="experienceTitle"
+                                            type="text"
+                                            value="O Presépio ganha vida."
+                                        >
+                                    </div>
+
+                                    <div class="admin-form-field">
+                                        <label for="admin-experience-description">
+                                            Descrição
+                                        </label>
+
+                                        <textarea
+                                            id="admin-experience-description"
+                                            name="experienceDescription"
+                                            rows="5"
+                                        >Luz, música e movimento unem-se numa apresentação cuidadosamente sincronizada, onde cada detalhe faz renascer a noite que mudou o mundo.</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                id="admin-editor-about"
+                                class="admin-editor-panel"
+                                hidden
+                            >
+                                <div class="admin-editor-heading">
+                                    <span>03</span>
+
+                                    <div>
+                                        <h3>Quem somos</h3>
+                                        <p>Informação institucional dos Arautos do Evangelho.</p>
+                                    </div>
+                                </div>
+
+                                <div class="admin-editor-fields">
+                                    <div class="admin-form-field">
+                                        <label for="admin-about-title">
+                                            Título
+                                        </label>
+
+                                        <input
+                                            id="admin-about-title"
+                                            name="aboutTitle"
+                                            type="text"
+                                            value="Arautos do Evangelho."
+                                        >
+                                    </div>
+
+                                    <div class="admin-form-field">
+                                        <label for="admin-about-description">
+                                            Texto institucional
+                                        </label>
+
+                                        <textarea
+                                            id="admin-about-description"
+                                            name="aboutDescription"
+                                            rows="8"
+                                        ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                id="admin-editor-visit"
+                                class="admin-editor-panel"
+                                hidden
+                            >
+                                <div class="admin-editor-heading">
+                                    <span>04</span>
+
+                                    <div>
+                                        <h3>Visitar</h3>
+                                        <p>Morada, horários e duração da visita.</p>
+                                    </div>
+                                </div>
+
+                                <div class="admin-editor-fields admin-editor-fields-two">
+                                    <div class="admin-form-field">
+                                        <label for="admin-address">Morada</label>
+
+                                        <input
+                                            id="admin-address"
+                                            name="address"
+                                            type="text"
+                                            value="Av. dos Combatentes da Grande Guerra, 355, Porto"
+                                        >
+                                    </div>
+
+                                    <div class="admin-form-field">
+                                        <label for="admin-duration">Duração</label>
+
+                                        <input
+                                            id="admin-duration"
+                                            name="duration"
+                                            type="text"
+                                            value="45 minutos"
+                                        >
+                                    </div>
+
+                                    <div class="admin-form-field">
+                                        <label for="admin-opening-time">
+                                            Hora de abertura
+                                        </label>
+
+                                        <input
+                                            id="admin-opening-time"
+                                            name="openingTime"
+                                            type="time"
+                                            value="14:00"
+                                        >
+                                    </div>
+
+                                    <div class="admin-form-field">
+                                        <label for="admin-closing-time">
+                                            Hora de encerramento
+                                        </label>
+
+                                        <input
+                                            id="admin-closing-time"
+                                            name="closingTime"
+                                            type="time"
+                                            value="18:00"
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                id="admin-editor-contacts"
+                                class="admin-editor-panel"
+                                hidden
+                            >
+                                <div class="admin-editor-heading">
+                                    <span>05</span>
+
+                                    <div>
+                                        <h3>Contactos</h3>
+                                        <p>Email e telefone apresentados no site.</p>
+                                    </div>
+                                </div>
+
+                                <div class="admin-editor-fields admin-editor-fields-two">
+                                    <div class="admin-form-field">
+                                        <label for="admin-contact-email">
+                                            Email
+                                        </label>
+
+                                        <input
+                                            id="admin-contact-email"
+                                            name="contactEmail"
+                                            type="email"
+                                            value="contacto@presepio.pt"
+                                        >
+                                    </div>
+
+                                    <div class="admin-form-field">
+                                        <label for="admin-contact-phone">
+                                            Telefone
+                                        </label>
+
+                                        <input
+                                            id="admin-contact-phone"
+                                            name="contactPhone"
+                                            type="tel"
+                                            value="+351 912 345 678"
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- ========================================
+                     IMAGENS E VÍDEOS
+                     ======================================== -->
+
+                <section
+                    id="admin-section-media"
+                    class="admin-panel-section"
+                    data-section-title="Imagens e vídeos"
+                    data-section-eyebrow="BIBLIOTECA MULTIMÉDIA"
+                    hidden
+                >
+                    <div class="admin-section-heading">
+                        <div>
+                            <p class="admin-eyebrow">
+                                BIBLIOTECA MULTIMÉDIA
+                            </p>
+
+                            <h2>Imagens e vídeos</h2>
+
+                            <p>
+                                Substitua os conteúdos visuais utilizados
+                                no site público.
+                            </p>
+                        </div>
+
+                        <button
+                            id="admin-upload-media"
+                            class="admin-primary-button"
+                            type="button"
+                        >
+                            <span>Carregar ficheiro</span>
+                            <span aria-hidden="true">↑</span>
+                        </button>
+                    </div>
+
+                    <input
+                        id="admin-media-input"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp,video/mp4,video/webm"
+                        multiple
+                        hidden
+                    >
+
+                    <div class="admin-media-grid">
+                        <article
+                            class="admin-media-card"
+                            data-media-key="heroVideo"
+                        >
+                            <div class="admin-media-preview hero-preview">
+                                <span>VÍDEO</span>
+                            </div>
+
+                            <div class="admin-media-information">
+                                <div>
+                                    <strong>Vídeo principal</strong>
+                                    <small>presepio-hero.mp4</small>
+                                </div>
+
+                                <button type="button">
+                                    Substituir
+                                </button>
+                            </div>
+                        </article>
+
+                        <article
+                            class="admin-media-card"
+                            data-media-key="experienceImage"
+                        >
+                            <div class="admin-media-preview experience-preview">
+                                <span>IMAGEM</span>
+                            </div>
+
+                            <div class="admin-media-information">
+                                <div>
+                                    <strong>Experiência</strong>
+                                    <small>experiencia.jpg</small>
+                                </div>
+
+                                <button type="button">
+                                    Substituir
+                                </button>
+                            </div>
+                        </article>
+
+                        <article
+                            class="admin-media-card"
+                            data-media-key="detailsImage"
+                        >
+                            <div class="admin-media-preview details-preview">
+                                <span>IMAGEM</span>
+                            </div>
+
+                            <div class="admin-media-information">
+                                <div>
+                                    <strong>Detalhes</strong>
+                                    <small>detalhes.jpg</small>
+                                </div>
+
+                                <button type="button">
+                                    Substituir
+                                </button>
+                            </div>
+                        </article>
+
+                        <article
+                            class="admin-media-card"
+                            data-media-key="verticalVideo"
+                        >
+                            <div class="admin-media-preview vertical-preview">
+                                <span>9:16</span>
+                            </div>
+
+                            <div class="admin-media-information">
+                                <div>
+                                    <strong>Vídeo vertical</strong>
+                                    <small>video-vertical.mp4</small>
+                                </div>
+
+                                <button type="button">
+                                    Adicionar
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- ========================================
+                     GALERIA
+                     ======================================== -->
+
+                <section
+                    id="admin-section-gallery"
+                    class="admin-panel-section"
+                    data-section-title="Galeria"
+                    data-section-eyebrow="CONTEÚDOS VISUAIS"
+                    hidden
+                >
+                    <div class="admin-section-heading">
+                        <div>
+                            <p class="admin-eyebrow">
+                                CONTEÚDOS VISUAIS
+                            </p>
+
+                            <h2>Galeria</h2>
+
+                            <p>
+                                Organize as imagens e respetivas legendas.
+                            </p>
+                        </div>
+
+                        <button
+                            class="admin-primary-button"
+                            type="button"
+                        >
+                            <span>Adicionar imagem</span>
+                            <span aria-hidden="true">+</span>
+                        </button>
+                    </div>
+
+                    <div class="admin-empty-state">
+                        <span aria-hidden="true">▦</span>
+
+                        <h3>Editor da galeria</h3>
+
+                        <p>
+                            A ordenação e o carregamento das imagens serão
+                            ligados ao armazenamento na fase seguinte.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- ========================================
+                     SITE MÓVEL
+                     ======================================== -->
+
+                <section
+                    id="admin-section-mobile"
+                    class="admin-panel-section"
+                    data-section-title="Site móvel"
+                    data-section-eyebrow="APARÊNCIA RESPONSIVA"
+                    hidden
+                >
+                    <div class="admin-section-heading">
+                        <div>
+                            <p class="admin-eyebrow">
+                                APARÊNCIA RESPONSIVA
+                            </p>
+
+                            <h2>Site móvel</h2>
+
+                            <p>
+                                Personalize a versão para telemóvel sem alterar
+                                a apresentação do site no computador.
+                            </p>
+                        </div>
+
+                        <div class="admin-mobile-heading-actions">
+                            <button
+                                id="admin-mobile-preview"
+                                class="admin-secondary-button"
+                                type="button"
+                            >
+                                Pré-visualizar no telemóvel
+                            </button>
+
+                            <button
+                                id="admin-mobile-reset"
+                                class="admin-secondary-button"
+                                type="button"
+                            >
+                                Repor valores
+                            </button>
+                        </div>
+                    </div>
+
+                    <form
+                        id="admin-mobile-form"
+                        class="admin-mobile-editor"
+                    >
+                        <!-- NAVBAR MÓVEL -->
+
+                        <article class="admin-mobile-card">
+                            <div class="admin-mobile-card-heading">
+                                <span>01</span>
+
+                                <div>
+                                    <h3>Navbar móvel</h3>
+
+                                    <p>
+                                        Marca, escudo e transparência
+                                        da navegação.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="admin-mobile-fields">
+                                <label class="admin-setting-row">
+                                    <span>
+                                        <strong>Mostrar nome do site</strong>
+
+                                        <small>
+                                            Apresentar “Presépio 2026”
+                                            à esquerda.
+                                        </small>
+                                    </span>
+
+                                    <span class="admin-switch">
+                                        <input
+                                            id="mobile-show-brand"
+                                            name="mobileShowBrand"
+                                            type="checkbox"
+                                            checked
+                                        >
+
+                                        <span></span>
+                                    </span>
+                                </label>
+
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Tamanho do escudo</span>
+
+                                        <output id="mobile-logo-width-output">
+                                            66 px
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-logo-width"
+                                        name="mobileLogoWidth"
+                                        type="range"
+                                        min="44"
+                                        max="110"
+                                        value="66"
+                                    >
+                                </label>
+
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Posição vertical do escudo</span>
+
+                                        <output id="mobile-logo-top-output">
+                                            7 px
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-logo-top"
+                                        name="mobileLogoTop"
+                                        type="range"
+                                        min="-20"
+                                        max="45"
+                                        value="7"
+                                    >
+                                </label>
+
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Opacidade da navbar</span>
+
+                                        <output id="mobile-navbar-opacity-output">
+                                            82%
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-navbar-opacity"
+                                        name="mobileNavbarOpacity"
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="82"
+                                    >
+                                </label>
+
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Desfoque do vidro</span>
+
+                                        <output id="mobile-navbar-blur-output">
+                                            6 px
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-navbar-blur"
+                                        name="mobileNavbarBlur"
+                                        type="range"
+                                        min="0"
+                                        max="30"
+                                        value="6"
+                                    >
+                                </label>
+                            </div>
+                        </article>
+
+                        <!-- HERO MÓVEL -->
+
+                        <article class="admin-mobile-card">
+                            <div class="admin-mobile-card-heading">
+                                <span>02</span>
+
+                                <div>
+                                    <h3>Abertura móvel</h3>
+
+                                    <p>
+                                        Enquadramento do vídeo,
+                                        título e altura inicial.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="admin-mobile-fields">
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Posição horizontal do fundo</span>
+
+                                        <output id="mobile-hero-x-output">
+                                            42%
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-hero-x"
+                                        name="mobileHeroX"
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="42"
+                                    >
+                                </label>
+
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Posição vertical do fundo</span>
+
+                                        <output id="mobile-hero-y-output">
+                                            50%
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-hero-y"
+                                        name="mobileHeroY"
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="50"
+                                    >
+                                </label>
+
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Zoom do fundo</span>
+
+                                        <output id="mobile-hero-zoom-output">
+                                            100%
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-hero-zoom"
+                                        name="mobileHeroZoom"
+                                        type="range"
+                                        min="100"
+                                        max="160"
+                                        value="100"
+                                    >
+                                </label>
+
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Tamanho do título</span>
+
+                                        <output id="mobile-title-size-output">
+                                            58 px
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-title-size"
+                                        name="mobileTitleSize"
+                                        type="range"
+                                        min="36"
+                                        max="86"
+                                        value="58"
+                                    >
+                                </label>
+
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Altura da abertura</span>
+
+                                        <output id="mobile-hero-height-output">
+                                            100 svh
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-hero-height"
+                                        name="mobileHeroHeight"
+                                        type="range"
+                                        min="80"
+                                        max="135"
+                                        value="100"
+                                    >
+                                </label>
+
+                                <label class="admin-setting-row">
+                                    <span>
+                                        <strong>Mostrar descrição</strong>
+
+                                        <small>
+                                            Texto colocado abaixo
+                                            do título principal.
+                                        </small>
+                                    </span>
+
+                                    <span class="admin-switch">
+                                        <input
+                                            id="mobile-show-description"
+                                            name="mobileShowDescription"
+                                            type="checkbox"
+                                            checked
+                                        >
+
+                                        <span></span>
+                                    </span>
+                                </label>
+
+                                <label class="admin-form-field">
+                                    <span>Alinhamento do texto</span>
+
+                                    <select
+                                        id="mobile-hero-alignment"
+                                        name="mobileHeroAlignment"
+                                    >
+                                        <option
+                                            value="left"
+                                            selected
+                                        >
+                                            Esquerda
+                                        </option>
+
+                                        <option value="center">
+                                            Centro
+                                        </option>
+                                    </select>
+                                </label>
+                            </div>
+                        </article>
+
+                        <!-- VÍDEO VERTICAL -->
+
+                        <article class="admin-mobile-card">
+                            <div class="admin-mobile-card-heading">
+                                <span>03</span>
+
+                                <div>
+                                    <h3>Vídeo de bastidores</h3>
+
+                                    <p>
+                                        Ordem, tamanho e enquadramento
+                                        do vídeo vertical.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="admin-mobile-fields">
+                                <label class="admin-form-field">
+                                    <span>Ordem dos conteúdos</span>
+
+                                    <select
+                                        id="mobile-video-order"
+                                        name="mobileVideoOrder"
+                                    >
+                                        <option
+                                            value="text-first"
+                                            selected
+                                        >
+                                            Texto primeiro, vídeo depois
+                                        </option>
+
+                                        <option value="video-first">
+                                            Vídeo primeiro, texto depois
+                                        </option>
+                                    </select>
+                                </label>
+
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Largura do vídeo</span>
+
+                                        <output id="mobile-video-width-output">
+                                            100%
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-video-width"
+                                        name="mobileVideoWidth"
+                                        type="range"
+                                        min="65"
+                                        max="100"
+                                        value="100"
+                                    >
+                                </label>
+
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Arredondamento dos cantos</span>
+
+                                        <output id="mobile-video-radius-output">
+                                            34 px
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-video-radius"
+                                        name="mobileVideoRadius"
+                                        type="range"
+                                        min="0"
+                                        max="70"
+                                        value="34"
+                                    >
+                                </label>
+
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Posição horizontal do vídeo</span>
+
+                                        <output id="mobile-video-x-output">
+                                            50%
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-video-x"
+                                        name="mobileVideoX"
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="50"
+                                    >
+                                </label>
+
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Posição vertical do vídeo</span>
+
+                                        <output id="mobile-video-y-output">
+                                            50%
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-video-y"
+                                        name="mobileVideoY"
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="50"
+                                    >
+                                </label>
+
+                                <label class="admin-setting-row">
+                                    <span>
+                                        <strong>Mostrar destaques</strong>
+
+                                        <small>
+                                            Preparação, construção
+                                            e apresentação.
+                                        </small>
+                                    </span>
+
+                                    <span class="admin-switch">
+                                        <input
+                                            id="mobile-show-highlights"
+                                            name="mobileShowHighlights"
+                                            type="checkbox"
+                                            checked
+                                        >
+
+                                        <span></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </article>
+
+                        <!-- TRANSIÇÕES -->
+
+                        <article class="admin-mobile-card">
+                            <div class="admin-mobile-card-heading">
+                                <span>04</span>
+
+                                <div>
+                                    <h3>Transições entre secções</h3>
+
+                                    <p>
+                                        Degradés, molduras e movimento
+                                        durante o scroll.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="admin-mobile-fields">
+                                <label class="admin-setting-row">
+                                    <span>
+                                        <strong>Ativar transições</strong>
+
+                                        <small>
+                                            Movimento cinematográfico
+                                            entre secções.
+                                        </small>
+                                    </span>
+
+                                    <span class="admin-switch">
+                                        <input
+                                            id="mobile-transitions-enabled"
+                                            name="mobileTransitionsEnabled"
+                                            type="checkbox"
+                                            checked
+                                        >
+
+                                        <span></span>
+                                    </span>
+                                </label>
+
+                                <label class="admin-setting-row">
+                                    <span>
+                                        <strong>Mostrar molduras</strong>
+
+                                        <small>
+                                            Moldura fina dourada
+                                            dentro das secções.
+                                        </small>
+                                    </span>
+
+                                    <span class="admin-switch">
+                                        <input
+                                            id="mobile-frame-enabled"
+                                            name="mobileFrameEnabled"
+                                            type="checkbox"
+                                            checked
+                                        >
+
+                                        <span></span>
+                                    </span>
+                                </label>
+
+                                <label class="admin-setting-row">
+                                    <span>
+                                        <strong>Mostrar degradés</strong>
+
+                                        <small>
+                                            Transição escura no início
+                                            e no fim.
+                                        </small>
+                                    </span>
+
+                                    <span class="admin-switch">
+                                        <input
+                                            id="mobile-gradient-enabled"
+                                            name="mobileGradientEnabled"
+                                            type="checkbox"
+                                            checked
+                                        >
+
+                                        <span></span>
+                                    </span>
+                                </label>
+
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Intensidade visual</span>
+
+                                        <output id="mobile-intensity-output">
+                                            70%
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-intensity"
+                                        name="mobileIntensity"
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value="70"
+                                    >
+                                </label>
+
+                                <label class="admin-range-field">
+                                    <span class="admin-range-heading">
+                                        <span>Duração da animação</span>
+
+                                        <output id="mobile-duration-output">
+                                            900 ms
+                                        </output>
+                                    </span>
+
+                                    <input
+                                        id="mobile-duration"
+                                        name="mobileDuration"
+                                        type="range"
+                                        min="200"
+                                        max="2000"
+                                        step="50"
+                                        value="900"
+                                    >
+                                </label>
+                            </div>
+                        </article>
+
+                        <!-- VISIBILIDADE DAS SECÇÕES -->
+
+                        <article class="admin-mobile-card admin-mobile-card-wide">
+                            <div class="admin-mobile-card-heading">
+                                <span>05</span>
+
+                                <div>
+                                    <h3>Secções visíveis no telemóvel</h3>
+
+                                    <p>
+                                        Escolha quais áreas são mostradas
+                                        na versão móvel.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="admin-mobile-visibility-grid">
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        data-mobile-section="experiencia"
+                                        checked
+                                    >
+                                    <span>Experiência</span>
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        data-mobile-section="detalhes"
+                                        checked
+                                    >
+                                    <span>Detalhes</span>
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        data-mobile-section="video-vertical"
+                                        checked
+                                    >
+                                    <span>Bastidores</span>
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        data-mobile-section="historia"
+                                        checked
+                                    >
+                                    <span>História</span>
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        data-mobile-section="galeria"
+                                        checked
+                                    >
+                                    <span>Galeria</span>
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        data-mobile-section="quem-somos"
+                                        checked
+                                    >
+                                    <span>Quem somos</span>
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        data-mobile-section="visitar"
+                                        checked
+                                    >
+                                    <span>Visitar</span>
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        data-mobile-section="marcacoes"
+                                        checked
+                                    >
+                                    <span>Marcações</span>
+                                </label>
+
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        data-mobile-section="contactos"
+                                        checked
+                                    >
+                                    <span>Contactos</span>
+                                </label>
+                            </div>
+                        </article>
+                    </form>
+
+                    <div class="admin-mobile-save-area">
+                        <p
+                            id="admin-mobile-message"
+                            class="admin-form-message"
+                            role="status"
+                            aria-live="polite"
+                        ></p>
+
+                        <button
+                            id="admin-mobile-save"
+                            class="admin-primary-button"
+                            type="button"
+                        >
+                            <span>Guardar versão móvel</span>
+                            <span aria-hidden="true">✓</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- ========================================
+                     DATAS E HORÁRIOS
+                     ======================================== -->
+
+                <section
+                    id="admin-section-schedule"
+                    class="admin-panel-section"
+                    data-section-title="Datas e horários"
+                    data-section-eyebrow="ORGANIZAÇÃO"
+                    hidden
+                >
+                    <div class="admin-section-heading">
+                        <div>
+                            <p class="admin-eyebrow">ORGANIZAÇÃO</p>
+                            <h2>Datas e horários</h2>
+
+                            <p>
+                                Configure o período de funcionamento,
+                                as sessões e a capacidade.
+                            </p>
+                        </div>
+                    </div>
+
+                    <form class="admin-settings-card">
+                        <div class="admin-settings-heading">
+                            <div>
+                                <h3>Período do Presépio</h3>
+
+                                <p>
+                                    Datas em que as marcações
+                                    estarão disponíveis.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="admin-editor-fields admin-editor-fields-two">
+                            <div class="admin-form-field">
+                                <label for="admin-start-date">
+                                    Data de início
+                                </label>
+
+                                <input
+                                    id="admin-start-date"
+                                    name="startDate"
+                                    type="date"
+                                    value="2026-12-01"
+                                >
+                            </div>
+
+                            <div class="admin-form-field">
+                                <label for="admin-end-date">
+                                    Data de fim
+                                </label>
+
+                                <input
+                                    id="admin-end-date"
+                                    name="endDate"
+                                    type="date"
+                                    value="2027-01-06"
+                                >
+                            </div>
+
+                            <div class="admin-form-field">
+                                <label for="admin-session-duration">
+                                    Duração da sessão
+                                </label>
+
+                                <select
+                                    id="admin-session-duration"
+                                    name="sessionDuration"
+                                >
+                                    <option value="30">
+                                        30 minutos
+                                    </option>
+
+                                    <option
+                                        value="45"
+                                        selected
+                                    >
+                                        45 minutos
+                                    </option>
+
+                                    <option value="60">
+                                        60 minutos
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="admin-form-field">
+                                <label for="admin-session-capacity">
+                                    Capacidade por sessão
+                                </label>
+
+                                <input
+                                    id="admin-session-capacity"
+                                    name="sessionCapacity"
+                                    type="number"
+                                    min="1"
+                                    max="100"
+                                    value="25"
+                                >
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- ========================================
+                     DEFINIÇÕES
+                     ======================================== -->
+
+                <section
+                    id="admin-section-settings"
+                    class="admin-panel-section"
+                    data-section-title="Definições"
+                    data-section-eyebrow="CONFIGURAÇÃO"
+                    hidden
+                >
+                    <div class="admin-section-heading">
+                        <div>
+                            <p class="admin-eyebrow">
+                                CONFIGURAÇÃO
+                            </p>
+
+                            <h2>Definições</h2>
+
+                            <p>
+                                Preferências gerais do painel e do site.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="admin-settings-card">
+                        <div class="admin-setting-row">
+                            <div>
+                                <h3>Site publicado</h3>
+
+                                <p>
+                                    Permitir o acesso dos visitantes ao site.
+                                </p>
+                            </div>
+
+                            <label class="admin-switch">
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+                                <span></span>
+                            </label>
+                        </div>
+
+                        <div class="admin-setting-row">
+                            <div>
+                                <h3>Aceitar marcações</h3>
+
+                                <p>
+                                    Ativar ou suspender temporariamente
+                                    as reservas.
+                                </p>
+                            </div>
+
+                            <label class="admin-switch">
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+                                <span></span>
+                            </label>
+                        </div>
+
+                        <div class="admin-setting-row">
+                            <div>
+                                <h3>Contagem decrescente</h3>
+
+                                <p>
+                                    Apresentar o contador no site público.
+                                </p>
+                            </div>
+
+                            <label class="admin-switch">
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- ================================================
+         NOTIFICAÇÃO
+         ================================================ -->
+
+    <div
+        id="admin-toast"
+        class="admin-toast"
+        role="status"
+        aria-live="polite"
+    >
+        <span class="admin-toast-icon">✓</span>
+
+        <div>
+            <strong>Alterações guardadas</strong>
+            <p>O conteúdo foi atualizado localmente.</p>
+        </div>
+    </div>
+
+    <!-- ================================================
+         MODAL
+         ================================================ -->
+
+    <div
+        id="admin-modal"
+        class="admin-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-labelledby="admin-modal-title"
+    >
+        <div class="admin-modal-card">
+            <button
+                id="admin-modal-close"
+                class="admin-modal-close"
+                type="button"
+                aria-label="Fechar janela"
+            >
+                ×
+            </button>
+
+            <div id="admin-modal-content">
+                <p class="admin-eyebrow">
+                    ADMINISTRAÇÃO
+                </p>
+
+                <h2 id="admin-modal-title">
+                    Informação
+                </h2>
+
+                <p>
+                    Esta funcionalidade será ligada à base de dados
+                    numa fase posterior.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================
+         SCRIPTS
+         ================================================ -->
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+<script src="./supabase-config.js?v=1"></script>
+<script src="./admin.js?v=4"></script>
+<script src="./admin-media.js?v=3"></script>
+<script src="./admin-mobile.js?v=2"></script>
+    <script src="./admin.js?v=2"></script>
+    <script src="./admin-media.js?v=2"></script>
+    <script src="./admin-mobile.js?v=1"></script>
+</body>
+</html>
